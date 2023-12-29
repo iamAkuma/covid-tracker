@@ -1,30 +1,27 @@
-// src/App.js
+import React, { useEffect } from 'react'
 
-import React, { useState } from 'react';
+const Covid = () => {
 
-function App() {
-  const [covidData, setCovidData] = useState(null);
+    const getCovidData = async() => {
+        try{
+            const res = await fetch('https://api.covid19india.org/data.json')
+            const actualData = await res.json();
+            console.log(actualData.statewise)
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/covid19data');
-      const data = await response.json();
-      setCovidData(data);
-    } catch (error) {
-      console.error('Error fetching COVID-19 data:', error);
+        }catch(error){
+            console.log(error)
+        }
     }
-  };
-
+    useEffect(() =>
+    {
+        getCovidData();
+    }, [])
   return (
-    <div className="App">
-      <h1>COVID-19 Data Viewer</h1>
-      <button onClick={fetchData}>Fetch Data</button>
-
-      {covidData && (
-        <pre>{JSON.stringify(covidData, null, 2)}</pre>
-      )}
+    <div>
+        <h1>🔴 LIVE</h1>
+        <h2>COVID-19 TRACKER</h2>
     </div>
-  );
+  )
 }
 
-export default App;
+export default Covid
