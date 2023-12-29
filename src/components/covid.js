@@ -10,6 +10,7 @@ const Covid = () => {
 
         }catch(error){
             console.log(error)
+            console.log("Looks like there's CORS policy block.")
         }
     }
     useEffect(() =>
