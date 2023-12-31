@@ -28,5 +28,10 @@ code {
 
 .btn
 {
+  width: 20%;
   border-radius: 10%;
+}
+
+.btn:hover{
+  color: #ff0000;
 }
