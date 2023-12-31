@@ -1,10 +1,10 @@
 import React from 'react'
-import Covid from './components/covid'
+import Button from './components/Button'
 
 const App = () => {
   return (
     <>
-    <Covid/>
+    <Button/>
     </>
   )
 }
