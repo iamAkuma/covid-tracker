@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to right, #ff0000, #0000ff);
 }
 
 code {
@@ -23,5 +24,9 @@ code {
   align-items: center;
   text-align: center;
   padding-top: 10px;
-  background: #000;
+}
+
+.btn
+{
+  border-radius: 10%;
 }

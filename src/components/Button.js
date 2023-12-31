@@ -10,7 +10,7 @@ const Button = () => {
         <div className='container'>
             <img className='pic' alt='pic' src={user.imgUrl}/>
             <h1>{user.name}</h1>
-            <button>Click this!</button>
+            <button className='btn'>Click this for magic!</button>
         </div>
     )
 }
