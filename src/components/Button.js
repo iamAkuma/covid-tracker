@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Button = () => {
+    const [isGlowing, setGlowing] = useState(false)
+
+    const handleClick = () => {
+        setGlowing(true);
+
+        setTimeout(() => {
+            setGlowing(false);
+        }, 1000)
+    }
     const user =
     {
         name: 'Lelouch',
@@ -10,7 +19,11 @@ const Button = () => {
         <div className='container'>
             <img className='pic' alt='pic' src={user.imgUrl}/>
             <h1>{user.name}</h1>
-            <button className='btn'>Click this for magic!</button>
+            <button onClick={handleClick} className='button-85'>Click this for magic!</button>
+            <div className={`glow-effect ${isGlowing ? 'active' : ''}`}>
+        {/* Content of the glowing area */}
+        {/* ... */}
+      </div>
         </div>
     )
 }
