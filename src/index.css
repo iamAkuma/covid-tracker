@@ -100,24 +100,26 @@ code {
 }
 
 .glow-effect {
+  display: inline-block; /* Make the container inline-block to wrap around the image */
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  overflow: hidden; /* Hide the overflow of the glowing effect */
 }
 
-/* Glowing state */
-.glow-effect.active::before {
+.glow-effect::before {
   content: '';
   position: absolute;
-  top: 200px; /* Center the glow vertically */
-  left: 50%; /* Center the glow horizontally */
-  transform: translate(-50%, -50%); /* Adjust for centering */
-  width: 40px; /* Adjust the size of the glowing circle */
-  height: 40px; /* Adjust the size of the glowing circle */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  background-color: rgba(249, 52, 38, 0.3); /* Adjust the color and opacity as needed */
-  box-shadow: 0 0 10px 5px rgba(249, 52, 38, 0.5); /* Add a box shadow for a subtle glow effect */
-  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: rgba(249, 52, 38, 0.3);
+  box-shadow: 0 0 20px 10px rgba(249, 52, 38, 0.5);
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.glow-effect.active::before {
+  width: 500%; /* Adjust the size of the glowing effect */
+  height: 150%; /* Adjust the size of the glowing effect */
 }
